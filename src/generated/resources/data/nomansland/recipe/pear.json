@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "bountifulpears:pear_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "nomansland:pear"
+  }
+}
