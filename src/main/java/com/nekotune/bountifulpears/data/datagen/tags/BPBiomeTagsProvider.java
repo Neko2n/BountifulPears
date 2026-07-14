@@ -31,7 +31,7 @@ public class BPBiomeTagsProvider extends BiomeTagsProvider {
             .add(NMLBiomes.OLD_GROWTH_FOREST)
             .add(NMLBiomes.OLD_GROWTH_FOREST_CLEARING)
             .add(NMLBiomes.OLD_GROWTH_FOREST_EDGE)
-            .add(NSBiomes.MAPLE_WOODLANDS);
+            .addOptional(NSBiomes.MAPLE_WOODLANDS.location());
         
         // Bountiful fares compatibility
         tag(BFBiomeTags.HAS_APPLE_TREES)
@@ -39,14 +39,14 @@ public class BPBiomeTagsProvider extends BiomeTagsProvider {
             .add(NMLBiomes.OLD_GROWTH_FOREST_CLEARING)
             .add(NMLBiomes.OLD_GROWTH_FOREST_EDGE);
         tag(BFBiomeTags.HAS_ORANGE_TREES)
-            .add(NSBiomes.SUGI_FOREST)
-            .add(NSBiomes.WINDSWEPT_SUGI_FOREST)
-            .add(NSBiomes.BLOOMING_SUGI_FOREST);
+            .addOptional(NSBiomes.SUGI_FOREST.location())
+            .addOptional(NSBiomes.WINDSWEPT_SUGI_FOREST.location())
+            .addOptional(NSBiomes.BLOOMING_SUGI_FOREST.location());
         tag(BFBiomeTags.HAS_PLUM_TREES)
-            .add(NSBiomes.SUGI_FOREST)
-            .add(NSBiomes.WINDSWEPT_SUGI_FOREST)
-            .add(NSBiomes.BLOOMING_SUGI_FOREST)
-            .add(NSBiomes.WISTERIA_FOREST);
+            .addOptional(NSBiomes.SUGI_FOREST.location())
+            .addOptional(NSBiomes.WINDSWEPT_SUGI_FOREST.location())
+            .addOptional(NSBiomes.BLOOMING_SUGI_FOREST.location())
+            .addOptional(NSBiomes.WISTERIA_FOREST.location());
         tag(BFBiomeTags.HAS_WILD_WHEAT)
             .add(NMLBiomes.PRAIRIE)
             .add(NMLBiomes.AUTUMNAL_FOREST)
@@ -57,7 +57,7 @@ public class BPBiomeTagsProvider extends BiomeTagsProvider {
             .add(NMLBiomes.OLD_GROWTH_FOREST_CLEARING)
             .add(NMLBiomes.OLD_GROWTH_FOREST_EDGE)
             .add(NMLBiomes.DESERT_RIVER)
-            .add(NSBiomes.FLOWERING_SHRUBLAND);
+            .addOptional(NSBiomes.FLOWERING_SHRUBLAND.location());
         tag(BFBiomeTags.HAS_WILD_BEETROOT)
             .add(NMLBiomes.PRAIRIE)
             .add(NMLBiomes.OLD_GROWTH_FOREST)
@@ -72,33 +72,33 @@ public class BPBiomeTagsProvider extends BiomeTagsProvider {
             .add(NMLBiomes.OLD_GROWTH_FOREST)
             .add(NMLBiomes.OLD_GROWTH_FOREST_CLEARING)
             .add(NMLBiomes.OLD_GROWTH_FOREST_EDGE)
-            .add(NSBiomes.WISTERIA_FOREST);
+            .addOptional(NSBiomes.WISTERIA_FOREST.location());
         tag(BFBiomeTags.HAS_WILD_LEEKS)
             .add(NMLBiomes.BLACKWATER_RIVER)
             .add(NMLBiomes.LUSH_RIVER);
         tag(BFBiomeTags.HAS_WILD_MAIZE)
             .add(NMLBiomes.LUSH_RIVER);
         tag(BFBiomeTags.HAS_LARGE_WILD_WHEAT)
-            .add(NSBiomes.OAK_SAVANNA)
-            .add(NSBiomes.SHRUBLAND);
+            .addOptional(NSBiomes.OAK_SAVANNA.location())
+            .addOptional(NSBiomes.SHRUBLAND.location());
         tag(BFBiomeTags.HAS_LARGE_WILD_CARROTS)
             .add(NMLBiomes.PRAIRIE);
         tag(BFBiomeTags.HAS_CHAMOMILE)
             .add(NMLBiomes.PRAIRIE)
-            .add(NSBiomes.BLOOMING_SUGI_FOREST)
-            .add(NSBiomes.BLOOMING_HIGHLANDS)
-            .add(NSBiomes.WISTERIA_FOREST)
-            .add(NSBiomes.FLOWERING_SHRUBLAND);
+            .addOptional(NSBiomes.BLOOMING_SUGI_FOREST.location())
+            .addOptional(NSBiomes.BLOOMING_HIGHLANDS.location())
+            .addOptional(NSBiomes.WISTERIA_FOREST.location())
+            .addOptional(NSBiomes.FLOWERING_SHRUBLAND.location());
         tag(BFBiomeTags.HAS_HONEYSUCKLE)
             .add(NMLBiomes.OLD_GROWTH_FOREST)
             .add(NMLBiomes.OLD_GROWTH_FOREST_CLEARING)
             .add(NMLBiomes.OLD_GROWTH_FOREST_EDGE)
-            .add(NSBiomes.BLOOMING_SUGI_FOREST)
-            .add(NSBiomes.WISTERIA_FOREST);
+            .addOptional(NSBiomes.BLOOMING_SUGI_FOREST.location())
+            .addOptional(NSBiomes.WISTERIA_FOREST.location());
         tag(BFBiomeTags.HAS_VIOLET_BELLFLOWER)
             .add(NMLBiomes.DARK_TAIGA)
-            .add(NSBiomes.ASPEN_FOREST)
-            .add(NSBiomes.BLOOMING_SUGI_FOREST)
-            .add(NSBiomes.WISTERIA_FOREST);
+            .addOptional(NSBiomes.ASPEN_FOREST.location())
+            .addOptional(NSBiomes.BLOOMING_SUGI_FOREST.location())
+            .addOptional(NSBiomes.WISTERIA_FOREST.location());
     }
 }

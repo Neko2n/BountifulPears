@@ -1,6 +1,12 @@
 {
   "values": [
-    "natures_spirit:oak_savanna",
-    "natures_spirit:shrubland"
+    {
+      "id": "natures_spirit:oak_savanna",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:shrubland",
+      "required": false
+    }
   ]
 }

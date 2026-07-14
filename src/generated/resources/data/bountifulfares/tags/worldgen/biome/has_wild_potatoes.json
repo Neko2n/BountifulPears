@@ -8,6 +8,9 @@
     "nomansland:old_growth_forest",
     "nomansland:old_growth_forest_clearing",
     "nomansland:old_growth_forest_edge",
-    "natures_spirit:wisteria_forest"
+    {
+      "id": "natures_spirit:wisteria_forest",
+      "required": false
+    }
   ]
 }

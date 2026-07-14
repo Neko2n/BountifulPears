@@ -9,6 +9,9 @@
     "nomansland:old_growth_forest_clearing",
     "nomansland:old_growth_forest_edge",
     "nomansland:desert_river",
-    "natures_spirit:flowering_shrubland"
+    {
+      "id": "natures_spirit:flowering_shrubland",
+      "required": false
+    }
   ]
 }

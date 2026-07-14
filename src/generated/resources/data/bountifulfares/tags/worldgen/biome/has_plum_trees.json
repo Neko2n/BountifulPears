@@ -1,8 +1,20 @@
 {
   "values": [
-    "natures_spirit:sugi_forest",
-    "natures_spirit:windswept_sugi_forest",
-    "natures_spirit:blooming_sugi_forest",
-    "natures_spirit:wisteria_forest"
+    {
+      "id": "natures_spirit:sugi_forest",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:windswept_sugi_forest",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:blooming_sugi_forest",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:wisteria_forest",
+      "required": false
+    }
   ]
 }
