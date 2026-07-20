@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
+import com.farcr.nomansland.common.registry.items.NMLItems;
 import com.nekotune.bountifulpears.shared.registries.content.BPBlocks;
 
 import net.hecco.bountifulfares.registry.content.BFBlocks;
@@ -33,19 +34,19 @@ public class BuildCreativeTabs {
             addOrdered(BPBlocks.PEAR_LEAVES);
             // addOrdered(BPBlocks.FLOWERING_PEAR_LEAVES);
             addOrdered(BPBlocks.PEAR_BLOCK);
-            flushOrdered(event, NoMansLandIntegration.CANDIED_PEAR);
+            flushOrderedBefore(event, NoMansLandIntegration.CANDIED_PEAR);
         } else if (tabKey == CreativeModeTabs.BUILDING_BLOCKS) {
             addOrdered(BPBlocks.PEAR_LOG);
             addOrdered(BPBlocks.PEAR_WOOD);
             addOrdered(BPBlocks.STRIPPED_PEAR_LOG);
             addOrdered(BPBlocks.STRIPPED_PEAR_WOOD);
-            flushOrdered(event, BFBlocks.STRIPPED_APPLE_WOOD);
+            flushOrderedAfter(event, BFBlocks.STRIPPED_APPLE_WOOD);
         } else if (tabKey == CreativeModeTabs.NATURAL_BLOCKS) {
             insertAfter(event, BPBlocks.PEAR_LOG, BFBlocks.APPLE_LOG);
             insertAfter(event, BPBlocks.PEAR_LEAVES, BFBlocks.FLOWERING_APPLE_LEAVES);
             insertAfter(event, BPBlocks.PEAR_SAPLING, BFBlocks.APPLE_SAPLING);
         } else if (tabKey == CreativeModeTabs.FOOD_AND_DRINKS) {
-            insertAfter(event, BPBlocks.PEAR_BLOCK, BFBlocks.APPLE_BLOCK);
+            insertAfter(event, BPBlocks.PEAR_BLOCK, NMLItems.SYRUPED_PEAR);
         }
     }
 
@@ -59,10 +60,19 @@ public class BuildCreativeTabs {
         ordered.add(item.get().asItem().getDefaultInstance());
     }
 
-    private static void flushOrdered(final BuildCreativeModeTabContentsEvent event, final Supplier<? extends ItemLike> insertAfterExisting) {
+    private static void flushOrderedAfter(final BuildCreativeModeTabContentsEvent event, final Supplier<? extends ItemLike> insertAfterExisting) {
         ItemStack previous = insertAfterExisting.get().asItem().getDefaultInstance();
         for (final ItemStack toInsert : ordered) {
             event.insertAfter(previous, toInsert, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            previous = toInsert;
+        }
+        ordered.clear();
+    }
+
+    private static void flushOrderedBefore(final BuildCreativeModeTabContentsEvent event, final Supplier<? extends ItemLike> insertBeforeExisting) {
+        ItemStack previous = insertBeforeExisting.get().asItem().getDefaultInstance();
+        for (final ItemStack toInsert : ordered.reversed()) {
+            event.insertBefore(previous, toInsert, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             previous = toInsert;
         }
         ordered.clear();
