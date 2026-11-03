@@ -32,29 +32,10 @@ public class BountifulPears {
 
         MJRegistries.registerAll(modEventBus);
 
-        // Register ourselves for server and other game events we are interested in.
-        // Note that this is necessary if and only if we want *this* class (MinecraftJourneysCore) to respond directly to events.
-        // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
-        NeoForge.EVENT_BUS.register(this);
-
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, BPConfig.SPEC);
-    }
 
-    /**
-     * First of four common setup events fired on startup.
-     * @param event {@link FMLCommonSetupEvent}
-     */
-    private void commonSetup(FMLCommonSetupEvent event) {
-        LOGGER.info("HELLO FROM COMMON SETUP");
-    }
-
-    /**
-     * Fires when the dedicated server begins starting.
-     * @param event {@link ServerStartingEvent}
-     */
-    @SubscribeEvent
-    private void onServerStarting(ServerStartingEvent event) {
-        LOGGER.info("HELLO from server starting");
+        // Log message for debugging purposes.
+        LOGGER.info("Loaded Bountiful Pears");
     }
 }
